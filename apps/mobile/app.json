@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "ZuriDesk",
+    "slug": "zuridesk",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hazinasoft.zuridesk"
+    },
+    "android": {
+      "package": "com.hazinasoft.zuridesk",
+      "adaptiveIcon": {
+        "backgroundColor": "#fffaf5"
+      }
+    }
+  }
+}

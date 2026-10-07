@@ -1,0 +1,43 @@
+{
+  "name": "@zuridesk/mobile",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.ts",
+  "scripts": {
+    "build": "node ../../scripts/run-with-root-env.mjs expo export --platform android --output-dir dist/android && node ../../scripts/run-with-root-env.mjs expo export --platform ios --output-dir dist/ios",
+    "dev": "node ../../scripts/run-with-root-env.mjs expo start",
+    "android": "node ../../scripts/run-with-root-env.mjs expo start --android",
+    "ios": "node ../../scripts/run-with-root-env.mjs expo start --ios",
+    "typecheck": "tsc --noEmit",
+    "test": "jest --runInBand",
+    "test:integration": "echo 'No mobile integration tests in Phase 1'"
+  },
+  "dependencies": {
+    "@zuridesk/api-client": "workspace:*",
+    "@zuridesk/ui": "workspace:*",
+    "expo": "~57.0.26",
+    "expo-status-bar": "~57.0.1",
+    "react": "19.2.3",
+    "react-native": "0.86.3",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/jest": "29.5.14",
+    "@types/react": "19.2.18",
+    "@types/react-test-renderer": "19.3.0",
+    "jest": "29.7.0",
+    "jest-expo": "57.0.5",
+    "react-test-renderer": "19.2.3",
+    "typescript": "5.9.3"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "setupFiles": [
+      "<rootDir>/jest.setup.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ]
+  }
+}

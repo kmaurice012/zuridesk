@@ -1,0 +1,33 @@
+{
+  "name": "zuridesk",
+  "version": "0.0.0",
+  "private": true,
+  "description": "ZuriDesk multi-tenant beauty business operating system",
+  "engines": {
+    "node": ">=24.3.0 <25"
+  },
+  "packageManager": "pnpm@12.9.1",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --max-warnings=0 && node scripts/verify-boundaries.mjs && node scripts/verify-no-secrets.mjs",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:integration": "turbo run test:integration",
+    "generate:api": "pnpm --filter @zuridesk/api generate:openapi && pnpm --filter @zuridesk/api-client generate",
+    "check:api": "pnpm --filter @zuridesk/api check:openapi && pnpm --filter @zuridesk/api-client check"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.10.0",
+    "eslint": "^10.12.0",
+    "eslint-plugin-import-x": "4.17.1",
+    "globals": "17.13.0",
+    "prettier": "3.9.9",
+    "turbo": "2.11.7",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.71.0"
+  }
+}
